@@ -15,7 +15,7 @@ export default function Home({ users, messages, onSendMsg }: Props) {
   return (
     <IonPage>
       <IonHeader>
-        <TitleBar title="Live Chat" members={users.length} />
+        <TitleBar title="Live Chat" users={users} />
       </IonHeader>
       <IonContent fullscreen>
         <Conversation messages={messages} />
