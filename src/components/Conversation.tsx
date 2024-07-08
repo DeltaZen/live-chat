@@ -12,11 +12,7 @@ export default function Conversation({ messages }: { messages: Msg[] }) {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const items = messages.map((msg) => (
-    <div className="msg">
-      <Message sender={msg.senderName} text={msg.text} />
-    </div>
-  ));
+  const items = messages.map((msg) => <Message msg={msg} />);
 
   return (
     <div className="conversation">

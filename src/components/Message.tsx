@@ -1,17 +1,17 @@
-import { IonLabel } from "@ionic/react";
 // @ts-ignore
 import getRGB from "consistent-color-generation";
+import { Msg } from "../types";
 
-type Props = {
-  sender: string;
-  text: string;
-};
-
-export default function Message({ sender, text }: Props) {
-  const textColor = getRGB(sender + "fool").toString();
+export default function Message({ msg }: { msg: Msg }) {
+  const textColor = getRGB(msg.senderName).toString();
+  const time = new Date(msg.time).toLocaleTimeString();
   return (
-    <IonLabel>
-      <strong style={{ color: textColor }}>{sender}: </strong> {text}
-    </IonLabel>
+    <div className="msg">
+      <ion-note slot="start">{time} </ion-note>
+      <ion-label>
+        <strong style={{ color: textColor }}>{msg.senderName} </strong>
+        {msg.text}
+      </ion-label>
+    </div>
   );
 }
