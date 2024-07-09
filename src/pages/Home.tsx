@@ -6,22 +6,34 @@ import TitleBar from "../components/TitleBar";
 import { User, Msg } from "../types";
 
 type Props = {
+  topic: string;
+  me: User;
   users: User[];
   messages: Msg[];
   onSendMsg: (text: string) => void;
+  onTyping: (text: string) => void;
 };
 
-export default function Home({ users, messages, onSendMsg }: Props) {
+export default function Home({
+  topic,
+  me,
+  users,
+  messages,
+  onSendMsg,
+  onTyping,
+}: Props) {
+  const typingUsers = users.filter((user) => user.state === 2);
+
   return (
     <IonPage>
       <IonHeader>
-        <TitleBar title="Live Chat" users={users} />
+        <TitleBar title={topic} me={me} users={users} />
       </IonHeader>
       <IonContent fullscreen>
-        <Conversation messages={messages} />
+        <Conversation typingUsers={typingUsers} messages={messages} />
       </IonContent>
       <IonFooter>
-        <Composer onSend={onSendMsg} />
+        <Composer onTyping={onTyping} onSend={onSendMsg} />
       </IonFooter>
     </IonPage>
   );

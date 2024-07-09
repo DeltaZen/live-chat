@@ -22,9 +22,10 @@ import "./TitleBar.css";
 type Props = {
   title: string;
   users: User[];
+  me: User;
 };
 
-export default function TitleBar({ title, users }: Props) {
+export default function TitleBar({ title, users, me }: Props) {
   const modal = useRef<HTMLIonModalElement>(null);
 
   function dismiss() {
@@ -33,7 +34,7 @@ export default function TitleBar({ title, users }: Props) {
 
   const userItem = (user: User, isMe: boolean) => (
     <IonItem>
-      <TextAvatar text={user.name} />
+      <TextAvatar name={user.name} id={user.id} />
       <IonLabel className="contact-title">
         <strong>{user.name}</strong>
       </IonLabel>
@@ -42,14 +43,14 @@ export default function TitleBar({ title, users }: Props) {
   );
 
   const items = users.map((user) => userItem(user, false));
-  items.push(userItem({ name: window.webxdc.selfName, lastSeen: 0 }, true));
+  items.push(userItem(me, true));
 
   return (
     <>
       <IonToolbar id="open-modal">
         <IonButtons slot="start">
           <IonButton>
-            <TextAvatar text={title} />
+            <TextAvatar name={title} id="" />
           </IonButton>
         </IonButtons>
         <IonLabel>
