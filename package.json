@@ -3,31 +3,31 @@
   "type": "module",
   "scripts": {
     "start": "vite --port 3000",
-    "emulator": "concurrently \"npm start\" \"webxdc-dev run http://localhost:3000\"",
+    "emulator": "concurrently \"npm start\" \"webxdc-dev run https://localhost:3000\"",
     "build": "tsc && vite build",
     "fix": "prettier --write .",
-    "check:format": "prettier --check .",
-    "check": "tsc && npm run check:format"
+    "check": "tsc && prettier --check ."
   },
   "dependencies": {
     "@ionic/react": "^7.8.6",
     "@ionic/react-router": "^7.8.6",
     "consistent-color-generation": "^0.4.0",
     "ionicons": "^7.4.0",
-    "lib0": "^0.2.94",
-    "preact": "^10.22.1",
+    "lib0": "^0.2.99",
+    "preact": "^10.25.1",
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.8.3",
-    "@types/react": "^18.3.3",
+    "@preact/preset-vite": "^2.9.3",
+    "@types/react": "^18.3.14",
     "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react": "^4.3.1",
-    "concurrently": "^8.2.2",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.3",
-    "vite": "^4.5.3",
-    "webxdc-dev": "^0.17.0",
-    "webxdc-vite-plugins": "github:webxdc/webxdc-vite-plugins"
+    "@vitejs/plugin-react": "^4.3.4",
+    "@webxdc/types": "latest",
+    "@webxdc/vite-plugins": "latest",
+    "@webxdc/webxdc-dev": "latest",
+    "concurrently": "latest",
+    "prettier": "latest",
+    "typescript": "^5.7.2",
+    "vite": "latest"
   }
 }

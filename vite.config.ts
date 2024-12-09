@@ -1,5 +1,5 @@
 import preact from "@preact/preset-vite";
-import { webxdcViteConfig } from "webxdc-vite-plugins";
+import { webxdcViteConfig } from "@webxdc/vite-plugins";
 import { defineConfig } from "vite";
 
 const config = webxdcViteConfig();
