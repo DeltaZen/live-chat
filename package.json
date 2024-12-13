@@ -13,12 +13,12 @@
     "consistent-color-generation": "^0.4.0",
     "ionicons": "^7.4.0",
     "lib0": "^0.2.99",
-    "preact": "^10.25.1",
+    "preact": "^10.25.2",
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.9.3",
-    "@types/react": "^18.3.14",
+    "@types/react": "^18.3.16",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.3.4",
     "@webxdc/types": "latest",
