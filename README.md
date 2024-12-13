@@ -6,7 +6,7 @@ Real-time chat ephemeral room inside Delta Chat.
 
 ### Installing dependencies
 
-After cloning this repo, install dependecies:
+After cloning this repo, install dependencies:
 
 ```
 pnpm i
@@ -24,8 +24,6 @@ To test your work in your browser (with hot reloading!) while developing:
 
 ```
 pnpm start
-# Alternatively to test in a more advanced WebXDC emulator:
-pnpm emulator
 ```
 
 ### Building

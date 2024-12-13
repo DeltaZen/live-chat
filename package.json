@@ -3,7 +3,6 @@
   "type": "module",
   "scripts": {
     "start": "vite --port 3000",
-    "emulator": "concurrently \"npm start\" \"webxdc-dev run https://localhost:3000\"",
     "build": "tsc && vite build",
     "fix": "prettier --write .",
     "check": "tsc && prettier --check ."
@@ -24,8 +23,6 @@
     "@vitejs/plugin-react": "^4.3.4",
     "@webxdc/types": "latest",
     "@webxdc/vite-plugins": "latest",
-    "@webxdc/webxdc-dev": "latest",
-    "concurrently": "latest",
     "prettier": "latest",
     "typescript": "^5.7.2",
     "vite": "latest"
